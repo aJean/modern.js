@@ -69,7 +69,9 @@ export interface IAppContext {
   internalDirectory: string;
   plugins: {
     cli?: any;
+    cliPath?: any;
     server?: any;
+    serverPath?: any;
   }[];
   entrypoints: Entrypoint[];
   serverRoutes: ServerRoute[];
