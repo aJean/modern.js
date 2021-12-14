@@ -8,7 +8,11 @@ import modernTestPlugin from './plugins/modern';
 
 declare module '@modern-js/core' {
   interface UserConfig {
-    testing: TestConfig;
+    testing?: TestConfig;
+  }
+
+  interface ToolsConfig {
+    jest?: TestConfig['jest'];
   }
 }
 
