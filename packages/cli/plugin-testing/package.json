@@ -20,6 +20,13 @@
   "exports": {
     "./cli": "./dist/js/node/cli/index.js"
   },
+  "typesVersions": {
+    "*": {
+      "type": [
+        "./type.d.ts"
+      ]
+    }
+  },
   "scripts": {
     "prepare": "pnpm build",
     "prepublishOnly": "pnpm build --platform",
