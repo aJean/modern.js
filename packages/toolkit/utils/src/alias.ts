@@ -80,11 +80,10 @@ export const getAlias = (
   return aliasConfig;
 };
 
-export const getUserAlias = (alias: Record<string, string | string[]> = {}) => {
-  const keys = Object.keys(alias);
-  const userKeys = keys.filter(key => !key.includes('@modern-js/runtime'));
-  return userKeys.reduce<Record<string, string | string[]>>((o, k) => {
-    o[k] = alias[k];
+export const getUserAlias = (alias: Record<string, string | string[]> = {}) =>
+  Object.keys(alias).reduce((o, k) => {
+    if (Array.isArray(alias[k])) {
+      o[k] = alias[k];
+    }
     return o;
-  }, {});
-};
+  }, {} as Record<string, string | string[]>);
